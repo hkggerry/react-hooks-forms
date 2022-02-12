@@ -6,11 +6,20 @@ function Form() {
 
   return (
     <form>
-      <input type="text" value={firstName} />
-      <input type="text" value={lastName} />
+      <input type="text" onChange={handleFirstNameChange} value={firstName} />
+      <input type="text" onChange={handleLastNameChange} value={lastName} />
       <button type="submit">Submit</button>
     </form>
   );
 }
+
+function handleFirstNameChange(event) {
+  setFirstName(event.target.value);
+}
+
+function handleLastNameChange(event) {
+  setLastName(event.target.value);
+}
+
 
 export default Form;
